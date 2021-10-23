@@ -45,6 +45,13 @@ namespace PremiumCalculator.Controllers
             int age = _monthlyPremiumCalculator.GetAge(dateOfbirth);
             return new JsonResult(age);
         }
+        [HttpGet]
+        [Route("occupation")]
+        public JsonResult GetOccupation()
+        {
+            return new JsonResult(_premiumService.GetOccupations());
+        }
+
     }
 }
 

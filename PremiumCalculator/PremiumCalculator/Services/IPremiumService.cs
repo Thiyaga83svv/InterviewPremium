@@ -9,5 +9,7 @@ namespace PremiumCalculator.Services
     public interface IPremiumService
     {
         decimal GetPremiumAmount(MonthlyPremium monthlyPremium);
+
+        IEnumerable<Occupations> GetOccupations();
     }
 }

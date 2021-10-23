@@ -1,6 +1,7 @@
 ﻿using PremiumCalculator.BusinessLogic;
 using PremiumCalculator.Models;
 using PremiumCalculator.Repository;
+using System.Collections.Generic;
 
 namespace PremiumCalculator.Services
 {
@@ -14,6 +15,11 @@ namespace PremiumCalculator.Services
         {
             _monthlyPremiumCalculator = monthlyPremiumCalculator;
             _occupationRepository = occupationRepository;
+        }
+
+        public IEnumerable<Occupations> GetOccupations()
+        {
+            return _occupationRepository.AllOccupation;
         }
 
         public decimal GetPremiumAmount(MonthlyPremium monthlyPremium)
