@@ -6,7 +6,7 @@ namespace PremiumCalculator.BusinessLogic
     {
         public decimal GetMonthlyPremium(int deathCoverAmount, decimal occupationRatingFactor, int age)
         {
-            decimal deathPremium = (deathCoverAmount * occupationRatingFactor * age) / (1000 * 12);
+            decimal deathPremium = Math.Round((deathCoverAmount * occupationRatingFactor * age) / (1000 * 12), 2);
 
             return deathPremium;
         }

@@ -50,7 +50,7 @@ namespace PremiumCalculator.UnitTests.BusinessLogic
             var result = service.GetMonthlyPremium(deathCoverAmount, occupationRatingFactor, age);
 
             //ASSERT
-            result.Should().Be(583.33333333333333333333333333M);
+            result.Should().Be(583.33M);
 
         }
     }

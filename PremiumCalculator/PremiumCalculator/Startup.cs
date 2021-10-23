@@ -7,6 +7,8 @@ using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
 using PremiumCalculator.BusinessLogic;
 using PremiumCalculator.Repository;
+using PremiumCalculator.Services;
+using Serilog;
 
 namespace PremiumCalculator
 {
@@ -40,6 +42,7 @@ namespace PremiumCalculator
             services.AddScoped<IMonthlyPremiumCalculator, MonthlyPremiumCalculator>();
             services.AddScoped<IOccupationRepository, OccupationRepository>();
             services.AddScoped<IRatingsRepository, RatingsRepository>();
+            services.AddScoped<IPremiumService, PremiumService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
