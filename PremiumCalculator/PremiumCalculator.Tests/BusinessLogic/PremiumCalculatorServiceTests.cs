@@ -8,7 +8,7 @@ using PremiumCalculator.BusinessLogic;
 
 namespace PremiumCalculator.UnitTests.BusinessLogic
 {
-    public class MonthlyPremiumCalculatorTests : UnitTests
+    public class PremiumCalculatorServiceTests : UnitTests
     {
         [Fact]
         public void GetAgeReturnsCorrectValue()

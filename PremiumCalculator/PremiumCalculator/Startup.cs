@@ -5,6 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
+using PremiumCalculator.BusinessLogic;
+using PremiumCalculator.Repository;
 
 namespace PremiumCalculator
 {
@@ -34,6 +36,10 @@ namespace PremiumCalculator
                 .Json.ReferenceLoopHandling.Ignore)
                 .AddNewtonsoftJson(options => options.SerializerSettings.ContractResolver
                 = new DefaultContractResolver());
+
+            services.AddScoped<IMonthlyPremiumCalculator, MonthlyPremiumCalculator>();
+            services.AddScoped<IOccupationRepository, OccupationRepository>();
+            services.AddScoped<IRatingsRepository, RatingsRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
