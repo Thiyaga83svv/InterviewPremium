@@ -5,7 +5,7 @@
                <h3> Calculate Monthly Premium</h3>
             </div>
             <div class="card-body">
-                <form>
+                <form [formGroup]="premiumform">
                     <div class="row">
                         <div class="col-md-4">   
                             <fieldset>
@@ -93,19 +93,56 @@
                                     </div>      <select
                                     id="inputState"
                                     class="form-control"
-                                    formControlName="Occupation"
+                                    formControlName="occupation"
                                 >
                                     <option selected value="" disabled
-                                        >Select Country</option
+                                        >Select Occupation</option
                                     >
                                     <option
-                                        *ngFor="let country of countries"
-                                        [ngValue]="Occupation.twoDigitCode"
+                                        *ngFor="let Occupation of Occupations"
+                                        [ngValue]="Occupation.OccupationRating"
                                         >{{ Occupation. }}</option
                                     >
                                 </select>
                                 </div>
                             </fieldset>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div
+                                *ngIf="name.touched && name.errors"
+                                class="errorMessage"
+                            >
+                                <span *ngIf="name.hasError('required')"
+                                    >Name is required.</span
+                                >
+                            </div>
+                            <div
+                                *ngIf="dob.touched && dob.errors"
+                                class="errorMessage"
+                            >
+                                <span *ngIf="dob.hasError('required')"
+                                    >Date of birth is required.</span
+                                >
+                                
+                            </div>
+                            <div
+                                *ngIf="sumAssured.touched && sumAssured.errors"
+                                class="errorMessage"
+                            >
+                                <span *ngIf="sumAssured.hasError('required')"
+                                    >Sum Assured is required.</span
+                                >
+                            </div>
+                            <div
+                                *ngIf="occupation.touched && occupation.errors"
+                                class="errorMessage"
+                            >
+                                <span *ngIf="occupation.hasError('required')"
+                                    >Occupation is required.</span
+                                >
+                            </div>
                         </div>
                     </div>
                 </form>
