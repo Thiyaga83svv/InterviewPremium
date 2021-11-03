@@ -24,7 +24,7 @@ namespace PremiumCalculator.Services
 
         public decimal GetPremiumAmount(MonthlyPremium monthlyPremium)
         {
-            var occupationFactor = _occupationRepository.GetOccupationRatingFactor(monthlyPremium.OccupationName);
+            var occupationFactor = _occupationRepository.GetOccupationRatingFactor(monthlyPremium.Occupation);
             var premium = _monthlyPremiumCalculator.GetMonthlyPremium(monthlyPremium.SumAssured, occupationFactor, monthlyPremium.Age);
             return premium;
         }

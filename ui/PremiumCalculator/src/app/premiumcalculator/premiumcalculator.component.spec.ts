@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PremiumformComponent } from './premiumform.component';
+import { PremiumcalculatorComponent } from './premiumcalculator.component';
 
-describe('PremiumformComponent', () => {
-  let component: PremiumformComponent;
-  let fixture: ComponentFixture<PremiumformComponent>;
+describe('PremiumcalculatorComponent', () => {
+  let component: PremiumcalculatorComponent;
+  let fixture: ComponentFixture<PremiumcalculatorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PremiumformComponent ]
+      declarations: [ PremiumcalculatorComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PremiumformComponent);
+    fixture = TestBed.createComponent(PremiumcalculatorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

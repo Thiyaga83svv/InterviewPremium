@@ -34,7 +34,7 @@ namespace PremiumCalculator.Controllers
         public JsonResult CalculatePremium(MonthlyPremium monthlyPremium)
         {
             var premium = _premiumService.GetPremiumAmount(monthlyPremium);
-            _logger.LogInformation("Premium calculated for {0} is {1}", monthlyPremium.Name, premium);
+            _logger.LogInformation("Premium calculated for {0} is {1}", monthlyPremium.CustomerName, premium);
             return new JsonResult(premium);
         }
 

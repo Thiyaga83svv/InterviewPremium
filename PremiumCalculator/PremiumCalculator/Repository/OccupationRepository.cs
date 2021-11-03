@@ -56,7 +56,7 @@ namespace PremiumCalculator.Repository
 
         public decimal GetOccupationRatingFactor(string occupationName)
         {
-            return AllOccupation.FirstOrDefault(o => o.OccupationName == occupationName).Ratings.Factor;
+            return AllOccupation.FirstOrDefault(o => o.Ratings.RatingName == occupationName).Ratings.Factor;
         }
     }
 }
