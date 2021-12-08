@@ -38,13 +38,6 @@ namespace PremiumCalculator.Controllers
             return new JsonResult(premium);
         }
 
-        [HttpPost]
-        [Route("age")]
-        public JsonResult GetAge(DateTime dateOfbirth)
-        {
-            int age = _monthlyPremiumCalculator.GetAge(dateOfbirth);
-            return new JsonResult(age);
-        }
         [HttpGet]
         [Route("occupation")]
         public JsonResult GetOccupation()
